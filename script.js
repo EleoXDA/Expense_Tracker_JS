@@ -8,12 +8,20 @@ document.getElementById('add-income').addEventListener('click', function() {
 });
 
 document.getElementById('add-expense').addEventListener('click', function() {
-    const expenseCategory = document.getElementById('expense-category').value;
     const expenseAmount = Number(document.getElementById('expense-amount').value);
+
+    let totalExpenses = expenses.reduce((total, expense) => total + expense.amount, 0);
+    if (totalExpenses + expenseAmount > income) {
+        alert("This expenditure will exceed your income. Please review your expenses.");
+        return;
+    }
+
+    const expenseCategory = document.getElementById('expense-category').value;
     expenses.push({category: expenseCategory, amount: expenseAmount});
     updateExpensesInSummary();
     updateRemainderInSummary();
 });
+
 
 function updateIncomeInSummary() {
     const table = document.getElementById('summary-table');
