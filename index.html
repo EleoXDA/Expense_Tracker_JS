@@ -4,14 +4,19 @@
     <title>Expense Tracker</title>
   </head>
   <body>
-    <div id="input-section">
+    <div id="income-section">
       <input type="number" id="income" placeholder="Enter your income">
+      <button id="add-income">Set Income</button>
+    </div>
+    <div id="expense-section">
       <input type="text" id="expense-category" placeholder="Expense category">
       <input type="number" id="expense-amount" placeholder="Expense amount">
       <button id="add-expense">Add Expense</button>
     </div>
     <div id="summary-section">
-        <!-- Summary will be displayed here -->
+      <table id="summary-table">
+        <!-- Income and Expenses will be listed here -->
+      </table>
     </div>
   </body>
 </html>
