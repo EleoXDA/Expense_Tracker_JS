@@ -1,0 +1,8 @@
+#input-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#input-section input {
+    margin: 10px;
+}
